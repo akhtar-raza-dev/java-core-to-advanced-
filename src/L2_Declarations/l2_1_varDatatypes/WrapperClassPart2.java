@@ -31,7 +31,7 @@ public class WrapperClassPart2 {
         System.out.println("Long Minimum Value = " + myMinLongValue);
         System.out.println("Long Maximum Value = " + myMaxLongValue);
 
-        long BigLongLiteralValue = 2_147_483_647; // ? by deflaut treated as int value
+        long BigLongLiteralValue = 2_147_483_647; // ? by default treated as int value
         long BigLongLiteralValue2 = 9223372036854775807L;// ? L should be added at last to store a long datatype value because by default it is treated as int
 
         float myMinFloatValue = Float.MIN_VALUE;
@@ -50,7 +50,7 @@ public class WrapperClassPart2 {
 
         // Expression 1 -------------------------------------------------------------------------------------------------------------------------------
 
-        int myNewIntValue = (BigIntLiteralValue / 2); // ? by Default treated as int inside the parenthesis
+        int myNewIntValue = (BigIntLiteralValue / 2); // ? By Default treated as int inside the parenthesis
         //! Type Casting --> byte and short can't store int value (variable name used in the calculation should always be treated as int by default)
         byte myNewByteValue = (byte) (BigByteLiteralValue / 2); // ? show error and byte can't store int --> TypeCasting
         short myNewShortValue = (short) (BigShortLiteralValue / 2); // ? same thing

@@ -7,9 +7,9 @@ public class L1Car {
     private int doors = 4;
     private boolean convertible = false;
 
-//*    The purpose of these getter and setter methods is to control and protect access to private fields.
+    // Getters and setters provide controlled access to the private fields.
 
-//*    A getter is a method on a class that retrieves the value of a private field and returns it.
+    // A getter returns the current value of a private field.
     public String getMake() {
         return make;
     }
@@ -34,8 +34,9 @@ public class L1Car {
     //*    A setter is a method on a class that sets the value of a private field. They all have type void because they do not return a value.
     //*    Setters often include validation logic to ensure that only valid data is assigned to the field.
 
-//todo    In Java, the this keyword is a special reference name that points to the current object instance. It allows an object to refer to itself
-//         To Distinguish Instance Variables from Local Variables - Primarily seen in constructors and setters. When a method parameter or local variable has the same name as an instance variable, it "shadows" the instance variable. this is used to specify that you mean the instance variable
+    // 'this' refers to the current Car object.
+    // Here, 'make' is the method parameter, while 'this.make' is the object's field.
+    // Therefore, 'this.make = make' stores the parameter value in the object's field.
 
     public void setMake(String make) {
 
@@ -64,26 +65,44 @@ public class L1Car {
     }
 
     public void describe() {
-        //! if no value is assigned to fields, then the output will be '0-Door null null null false'
         /*
-        (Output Explanation) Reference vs. Primitive Types
-
-         Reference Types (e.g., String): A reference type variable stores a reference—a memory address that points to an object's actual location on the heap.
-         The variable itself does not contain the object's data. If a reference variable does not point to any object, its value is the special literal null. This applies to all objects, including strings, arrays etc.
-
-         Primitive Types (e.g., int): A primitive type variable directly contains its value within its own allocated memory space.
-         A primitive variable can never be null. If declared as a class field without initialization, primitives are assigned a default value, such
-         - byte: 0
-         - short: 0
-         - int: 0
-         - long: 0
-         - char: 0
-
-         - float: 0.0
-         - double: 0.0
-
-         - boolean: false
-
+         * If fields are not given values, Java assigns default values:
+         *
+         *                 Car object
+         *        +---------------------------+
+         *        | make       -> null        |  String reference
+         *        | model      -> null        |  String reference
+         *        | color      -> null        |  String reference
+         *        | doors      -> 0           |  int primitive
+         *        | convertible-> false       |  boolean primitive
+         *        +---------------------------+
+         *
+         * Reference type: String                Primitive type: int
+         * ----------------                       -------------------
+         * The color variable does not store      The doors variable stores
+         * the String value directly. It stores    the number directly.
+         * a reference to a String object.
+         *
+         * Car object in memory                    Heap memory
+         * +------------------+                   +-------------+
+         * | color (reference)| ----------------> | "White"      |
+         * +------------------+                   +-------------+
+         *
+         * +------------------+
+         * | doors = 4        |  The value 4 is stored directly here.
+         * +------------------+
+         *
+         * If color does not point to a String object, its value is null:
+         *
+         * +------------------+                   +-------------+
+         * | color = null      | ----------------> | no object   |
+         * +------------------+                   +-------------+
+         *
+         * A reference variable can contain null. A primitive variable
+         * cannot contain null; it always contains a value such as 0 or false.
+         * Therefore, if these fields are not initialized, the output is:
+         *
+         *     0-Door null null null false
          */
         System.out.println(doors + "-Door " +
                 color + " " +

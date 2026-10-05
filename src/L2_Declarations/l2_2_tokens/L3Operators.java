@@ -15,7 +15,7 @@ public class L3Operators {
         System.out.println("++o : " + (++o)); // 7 (increments then prints) i.e. o = 7
         System.out.println("o-- : " + (o--)); // 7 (prints then decrements) i.e. o = 6
         System.out.println("--o : " + (--o)); // 5 (decrements then prints) i.e. o = 5
-        System.out.println((o++) + 1); // 5 + 1 = 6
+        System.out.println((o++) + 10); // 5 + 10 = 6
         System.out.println(o); // 6
         System.out.println((++w) + 1); // 6 + 1 = 7
         System.out.println(w); // 6
@@ -63,9 +63,10 @@ public class L3Operators {
                                                     //   ----
                                                     //   0010 --> 2
 
-        System.out.println(" Bitwise Complement (or) NOT = " + (~c)); //! 0101 = 1010 --> -6 (NOTE: UNARY OPERATOR) changing bits from 0 to 1 and 1 to 0 and
+        System.out.println(" Bitwise Complement (or) NOT of number "+ c + " is " + (~c)); //! 0101 = 1010 --> -6 (NOTE: UNARY OPERATOR) changing bits from 0 to 1 and 1 to 0 and
                                                                       //!                     also changes the sign of the number from positive to negative.
 
+        System.out.println(" Bitwise Complement (or) NOT of number -5" + " is " + ~(-5) );
         //?     a) Shift Operators or Bitwise Shift Operators
         System.out.println("Signed Left Shift or Left shift : " + (c << 1)); // 0101 << 1 = 1010 --> 10
         System.out.println("Signed Right Shift or Right shift : " + (c >> 1)); // 0101 >> 1 = 0010 --> 2

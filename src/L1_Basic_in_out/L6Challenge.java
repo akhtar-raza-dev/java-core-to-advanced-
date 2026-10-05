@@ -1,28 +1,48 @@
 package L1_Basic_in_out;
 
+import java.io.Console;
 import java.util.Scanner;
 
 public class L6Challenge {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        /*
+         * Challenge: Read a person's name and year of birth using both Console
+         * and Scanner, then display their calculated age.
+         */
 
-            System.out.println(getInputFromConsole(2025));
-            System.out.println(getInputFromScanner(2025));
+        /* Open Command Prompt and run:
+          1) cd "E:\Java Programming" -
+          2) java src\L1_Basic_in_out\L6Challenge.java
+        * */
+        int currentYear = 2026;
+
+        System.out.println(getInputFromConsole(currentYear));
+
+//        The method does not need to create or close the scanner itself.
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println(getInputFromScanner(scanner, currentYear));
+        }
     }
-
 
     public static String getInputFromConsole(int currentYear) {
-//      These works only from the terminal you should enter - java .\src\L1_Basic_in_out\L6Challenge.java (Otherwise it will throw an error some intellij versions may support without running from the terminal)
-        String name = System.console().readLine("Enter your name: ");
-        System.out.println("Hi " + name + ", Thanks for taking the course");
+        Console console = System.console();
+        if (console == null) {
+            return "Console is unavailable. Run this method from a terminal.";
+        }
 
-        String dateOfBirth = System.console().readLine("Enter your date of birth: ");
-        int age = currentYear - Integer.parseInt(dateOfBirth);
-        return "So you are " + age + " years old";
+        String name = console.readLine("Enter your name: ");
+        int birthYear = Integer.parseInt(console.readLine("Enter your year of birth: "));
+        return "Hi " + name + ", you are " + (currentYear - birthYear) + " years old.";
     }
 
-    public static String getInputFromScanner(int currentYear) {
-        return "";
+    public static String getInputFromScanner(Scanner scanner, int currentYear) {
+        System.out.print("Enter your name: ");
+        String name = scanner.next();
+
+        System.out.print("Enter your year of birth: ");
+        int birthYear = scanner.nextInt();
+
+        return "Hi " + name + ", you are "
+                + (currentYear - birthYear) + " years old.";
     }
 }
-

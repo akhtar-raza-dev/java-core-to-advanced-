@@ -11,10 +11,10 @@ public class L12Ques {
 
         // use if-else statement to calculate the amount of the bill.
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the number of hardcopies: ");
-        int hardcopies = sc.nextInt();
+        System.out.print("Enter the number of hardCopies: ");
+        int hardCopies = sc.nextInt();
         int amount = 0;
-        if (hardcopies <= 10) {
+        if (hardCopies <= 10) {
             amount = 5;
             System.out.println("Amount: " + amount);
         } else {

@@ -3,15 +3,15 @@ package L4_MethodsRelatedConcepts;
 public class L3MethodOverloading {
     public static void main(String[] args) {
 
-      int highScore = calculateScore("Akhtar raza", 1000);
-      System.out.println("1st High score is: " + highScore);
+        int highScore = calculateScore("Akhtar raza", 1000);
+        System.out.println("1st High score is: " + highScore);
 
-      int high2 = calculateScore(100);
-      System.out.println("2nd High score is: " + high2);
+        int high2 = calculateScore(100);
+        System.out.println("2nd High score is: " + high2);
 
-      calculateScore();
+        calculateScore();
 
-      calculateScore(100, "Akhtar raza");
+        calculateScore(100, "Akhtar raza");
 
     }
 
@@ -38,9 +38,10 @@ public class L3MethodOverloading {
 
 /*
 
-Method overloading: It occurs when a class has multiple methods with the same name but with different parameters.
+* Method overloading occurs when a class has multiple methods with the same name but different parameter lists.
 
-The type, order and number of parameters, in conjunction with the name, make the method signature unique.
+  Changing the parameter type, count, or order is valid overloading
+
 (Note - A method's return type is not part of the signature and the parameter name is not part of the signature)
 
 */

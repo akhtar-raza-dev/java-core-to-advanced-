@@ -1,86 +1,102 @@
 package L2_Declarations.l2_1_varDatatypes;
 
 public class WrapperClassPart1 {
-    // Wrapper class is a class whose object wraps or contains primitive data types.There are basically two types
-    // 1) Autoboxing: The automatic conversion of a primitive data type into its corresponding wrapper class is known as autoboxing.
-    // 2) Unboxing: The automatic conversion of a wrapper class object into a primitive data type is known as unboxing.
+    //? A Wrapper class is a class whose object wraps or encapsulates a primitive data type, converting it into a reference type (object).
+    //  The Two Core Mechanisms are as follows:
+    //  1) Autoboxing: The automatic conversion of a primitive data type into its corresponding wrapper class is known as autoboxing.
+    //  2) Unboxing: The automatic conversion of a wrapper class object into a primitive data type is known as unboxing.
+    /*
+     * WHY WRAPPER CLASSES EXIST IN JAVA:
+     * 1. Collections & Generics: Data structures like ArrayList only accept objects
+     *    (e.g., ArrayList, not ArrayList).
+     * 2. Nullability: Wrappers can be 'null' to represent missing data (crucial for
+     *    databases/APIs), whereas primitives always have a default value (like 0 or false).
+     * 3. Utility Methods: They provide built-in methods for data conversion and evaluation
+     *    (e.g., Integer.parseInt("123"), Character.isDigit('a')).
+     * 4. Constants: They hold useful datatype limits (e.g., Integer.MAX_VALUE).
+     */
     public static void main(String[] args) {
+        // --------------------------------------------------------
+        // AUTOBOXING: Primitive -> Wrapper Object
+        // --------------------------------------------------------
+
         //? byte data type
         byte a = 1;
-
-        // wrapping around a Byte object
-
-        //todo_First method of wrapping below works with Java 8 not above
-        //! Byte byteObj = new Byte(a); works with Java 8
+        //todo_First method of wrapping below works with Java 8 and below
+        //! Byte byteObj = new Byte(a); // Deprecated in Java 9+
 
         //todo_Second method of wrapping below works with Java 9 and above
-        /* in most cases, you can simply rely on autoboxing (`Float floatObj = 18.6f;`) which is more concise and equally efficient
+        /* in most cases, you can simply rely on autoboxing which is more concise and equally efficient
            since the compiler automatically calls `valueOf()` behind the scenes.
          */
-        Byte byteObj = Byte.valueOf(a);
+        // Byte byteObj = Byte.valueOf(a);
         //! Or
-//      Byte byteObj = a; //todo_Mostly used third method of wrapping
+        Byte byteObj = a; //todo_Mostly used method of wrapping (Autoboxing)
+
+        //? short data type
+        short s = 20;
+        Short shortObj = s;
 
         //? int data type
         int b = 10;
-
-        // wrapping around Integer object
         //! Integer intObj = new Integer(b);
-        // Use with Java 9
         Integer intObj = b;
 
-        //? float data type
+        //? long data type
+        long l = 100000L;
+        Long longObj = l;
 
-        // wrapping around a Float object
+        //? float data type
+        float c = 18.6f;
         //! Float floatObj = new Float(c);
-        // Use with Java 9
-        Float floatObj = 18.6f;
+        Float floatObj = c;
 
         //? double data type
         double d = 250.5;
-
-        // Wrapping around Double object
         //! Double doubleObj = new Double(d);
-        // Use with Java 9
         Double doubleObj = d;
 
         //? char data type
         char e = 'a';
-
-        // wrapping around a Character object
         Character charObj = e;
 
-        // printing the values from objects
-        System.out.println(
-                "Values of Wrapper objects (printing as objects)");
-        System.out.println("\nByte object byteObj: "
-                + byteObj);
-        System.out.println("\nInteger object intObj: "
-                + intObj);
-        System.out.println("\nFloat object floatObj: "
-                + floatObj);
-        System.out.println("\nDouble object doubleObj: "
-                + doubleObj);
-        System.out.println("\nCharacter object charObj: "
-                + charObj);
+        //? boolean data type
+        boolean bool = true;
+        Boolean boolObj = bool;
 
-        // objects to data types (retrieving data types from
-        // objects) unwrapping objects to primitive data
-        // types
+        // printing the values from objects
+        System.out.println("--- Values of Wrapper objects (printing as objects) ---");
+        System.out.println("Byte object byteObj: " + byteObj);
+        System.out.println("Short object shortObj: " + shortObj);
+        System.out.println("Integer object intObj: " + intObj);
+        System.out.println("Long object longObj: " + longObj);
+        System.out.println("Float object floatObj: " + floatObj);
+        System.out.println("Double object doubleObj: " + doubleObj);
+        System.out.println("Character object charObj: " + charObj);
+        System.out.println("Boolean object boolObj: " + boolObj);
+
+        // --------------------------------------------------------
+        // UNBOXING: Wrapper Object -> Primitive
+        // --------------------------------------------------------
+
         byte bv = byteObj;
+        short sv = shortObj;
         int iv = intObj;
+        long lv = longObj;
         float fv = floatObj;
         double dv = doubleObj;
         char cv = charObj;
+        boolean boolv = boolObj;
 
         // printing the values from data types
-        System.out.println(
-                "\nUnwrapped values (printing as data types)");
-        System.out.println("\nbyte value, bv: " + bv);
-        System.out.println("\nint value, iv: " + iv);
-        System.out.println("\nfloat value, fv: " + fv);
-        System.out.println("\ndouble value, dv: " + dv);
-        System.out.println("\nchar value, cv: " + cv);
+        System.out.println("\n--- Unwrapped values (printing as primitive data types) ---");
+        System.out.println("byte value, bv: " + bv);
+        System.out.println("short value, sv: " + sv);
+        System.out.println("int value, iv: " + iv);
+        System.out.println("long value, lv: " + lv);
+        System.out.println("float value, fv: " + fv);
+        System.out.println("double value, dv: " + dv);
+        System.out.println("char value, cv: " + cv);
+        System.out.println("boolean value, boolv: " + boolv);
     }
-
 }

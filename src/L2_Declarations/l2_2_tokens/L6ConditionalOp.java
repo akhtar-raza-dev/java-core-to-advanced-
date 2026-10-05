@@ -17,7 +17,7 @@ public class L6ConditionalOp {
         x=69;
         y=89;
         int z=79;
-        int largestNumber = (x > y) ? (x > z ? x : z) : (y > z ? y : z);
+        int largestNumber = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
         System.out.println("The largest numbers is:  "+largestNumber);
     }
 }

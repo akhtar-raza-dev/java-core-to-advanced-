@@ -5,9 +5,7 @@ package L2_Declarations.l2_2_tokens;
 //!  1 to 4 are theoretically written in note.
 
 // Comment: Comments are non-executable parts of code that are used to provide explanation of code or temporarily disable the code during development.
-
 // Type of comments 1) Single line comment as shown in this line (syntax: // comment here)
-
 /* 2) Multi line comment as shown in these multiple lines (syntax: /* comment here * /)
                   india
                         is
@@ -25,7 +23,7 @@ package L2_Declarations.l2_2_tokens;
  *
  * @author Akhtar raza
  * @version 2.0
- * @see <a  href="https://docs.oracle.com/en/java/javase/14/docs/api/index.html" target= "_blanks">Java Docs</a>
+ * @see <a  href="https://docs.oracle.com/en/java/javase/14/docs/api/index.html" target= "_blanks">Javadocs</a>
  * @since 2024-8-22
  */
 public class L1Comments {

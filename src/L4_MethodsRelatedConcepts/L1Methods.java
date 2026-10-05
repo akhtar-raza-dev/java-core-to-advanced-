@@ -29,5 +29,5 @@ public class L1Methods {
 
 /*
 we can have multiple methods with the same method name, as long as the parameters are different.
-In many languages, methods can defined with default values, and we can omit passing values for these when calling the method. But java does not support this.
+In many languages, methods can be defined with default values, and we can omit passing values for these when calling the method. But java does not support this.
   */

@@ -1,28 +1,33 @@
 package L1_Basic_in_out;
 
-//todo                                          3) Using Console class
-//? Console class is used to read password and other sensitive data from the console. It is not used to read general data from the console.
+//*                         3) Using Console class
+// Console is mainly useful for interactive terminal input and passwords.
 
 import java.io.Console;
-//! or
-//! import java.io.*;
+import java.util.Arrays;
+
 public class L5InputUsingConsole {
     public static void main(String[] args) {
-          // Create a Console object
-        Console con = System.console(); //? System is a class in java.lang package and console() is a static method of System class that returns the Console object
+        /* Open Command Prompt and run:
+          1) cd "E:\Java Programming" -
+          2) java src\L1_Basic_in_out\L5InputUsingConsole.java
+        * */
 
-          // types of Console methods to take input(mostly used)
+        Console console = System.console();
 
-          // readLine() method
-        System.out.print("Enter yours Username: ");
-        String username = con.readLine();
+        // System.console() can return null when the program runs inside an IDE.
+        if (console == null) {
+            System.out.println("Run this program in Command Prompt or PowerShell.");
+            return;
+        }
 
-          // readPassword() method
-        System.out.print("Enter yours Password: ");
-        char[] password= con.readPassword();
+        String username = console.readLine("Username: ");
+        char[] password = console.readPassword("Password: ");
 
-        System.out.println("Yours Username is: " + username);
-        System.out.println("Yours Password is: " + new String(password));
+        System.out.println("Welcome, " + username);
+
+        // Clear the password characters from the array after use.
+        Arrays.fill(password, '\0');
     }
-
 }
+

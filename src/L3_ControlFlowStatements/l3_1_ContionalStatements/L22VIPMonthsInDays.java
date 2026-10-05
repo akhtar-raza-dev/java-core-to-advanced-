@@ -10,15 +10,14 @@ public class L22VIPMonthsInDays {
     }
         public static int getDaysInMonth(int month, int year) {
 
-            if (year < 1 || year > 9_999 && month < 1 || month > 12) {
-                return -1; // return -1 is used to show that the parameter is invalid and control flow transfer to next statement.
+            if (year < 1 || year > 9_999 || month < 1 || month > 12) {
+                return -1;
             }
-
             return switch (month) {
                 case 1, 3, 5, 7, 8, 10, 12 -> 31;  // for any of the following months, return 31
                 case 2 -> isLeapYear(year) ? 29 : 28; // if it's February, determine if it's a leap year first, then return either 28 or 29.
                 case 4, 6, 9, 11 -> 30; // return 30 for the following months
-                default -> -1; // return -1 if the month parameter is not between 1 and 12.
+                default -> -1;
             };
         }
 

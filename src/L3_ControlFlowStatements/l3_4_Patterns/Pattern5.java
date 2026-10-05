@@ -33,7 +33,7 @@ public class Pattern5 {
         System.out.println();
 
         /*
-            this is called floyd's Triangle
+            this is called Floyd's Triangle
 
             1
             2 3
@@ -59,7 +59,7 @@ public class Pattern5 {
            1
          */
         int H = 4;
-//        int num2 = 1;       for inverted floyd's triangle
+//        int num2 = 1;       for inverted Floyd's triangle
         for(int i = H; i > 0; i--) {
             int num2 = 1;
             for(int j = 0; j < i; j++) {

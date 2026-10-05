@@ -1,23 +1,34 @@
 package L1_Basic_in_out;
 
 public class L8CommandLineArgument {
-        public static void main(String[] args){
+    public static void main(String[] args) {
+        //? run in terminal: java file_path arguments OR use IDE feature
+        // Command-line arguments are received as String values.
+        // Use double quotes when one argument contains spaces.
+        System.out.println("Demo of Command-Line Arguments");
 
-            //    Example of a command-line argument that prints all the values passed as arguments.The arguments are of a string type by default.
-            //! To pass any argument as a sentence or string, we need to use double quotes.
-            System.out.println("Demo of Command Line Arguments");
-            System.out.println("Number of arguments: " + args.length); //? here args is an array of string type
-                                                                       //? "length" is a property of an array that returns the length of the array
-            if(args.length > 0) {                                                          //? "." is used to access the property of an object.
-            for (int i = 0; i < args.length; i++) {
-                System.out.println("Argument at index " + i + ":" + args[i]);
-              }
-            }
-            else
-            {
-                 System.out.println("No arguments passed.");
-            }
-
-            System.out.println("Sum of two arguments: " +  args[0] + args[1]); //? here the sum is not calculated but concatenated
+        if (args.length == 0) {
+            System.out.println("No arguments passed.");
+            return;
         }
+        // The condition only runs when there are fewer than two arguments: 0 or 1. for example 2 < 2 - false | 1 < 2 - true | 3 < 2 - false
+        if (args.length < 2) {
+            System.out.println("Pass at least two numeric arguments to calculate their sum.");
+            return;
+        }
+
+        System.out.println("Number of arguments: " + args.length);
+        for (int index = 0; index < args.length; index++) {
+            System.out.println("Argument at index " + index + ": " + args[index]);
+        }
+
+        try {
+            int firstNumber = Integer.parseInt(args[0]);
+            int secondNumber = Integer.parseInt(args[1]);
+            System.out.println("Sum of the first two arguments: "
+                    + (firstNumber + secondNumber));
+        } catch (NumberFormatException exception) {
+            System.out.println("The first two arguments must be valid integers.");
+        }
+    }
 }

@@ -1,27 +1,33 @@
 package L1_Basic_in_out;
 
 public class L9CommandOtherThanSring {
-    //* Command Line Arguments: Other than string type example such as integer, float, double, etc. while passing arguments to a program we use either inside quotes or without quotes.
+    //? run in terminal: java file_path arguments OR use IDE feature
+    /*
+     * Command-line arguments are always received as String values.
+     * Parse them when the program needs numeric types such as int, float, or double.
+     */
     public static void main(String[] args) {
-        if(args.length < 3) {
-            System.out.println("Please provide 3 arguments : an integer, a float, and a double.");
+        if (args.length < 3) {
+            System.out.println("Provide three arguments: an integer, a float, and a double.");
             return;
         }
+
         try {
-            int a = Integer.parseInt(args[0]);
-            float b = Float.parseFloat(args[1]);
-            double c = Double.parseDouble(args[2]);
-            System.out.println("Integer Argument: " + a);
-            System.out.println("Float Argument: " + b);
-            System.out.println("Double Argument: " + c);
-            System.out.println("Sum of all arguments: " + (a + b + c));
-            //? we can also use a, b and c in calculations
-            int sum = a + (int)b + (int)c;
-            System.out.println("Sum of all arguments (cast to int): " + sum);
-        } catch (NumberFormatException e) {
-            System.out.println("Please provide valid arguments." + e); //? if any argument is a string type cause an exception
+            int integerValue = Integer.parseInt(args[0]);
+            float floatValue = Float.parseFloat(args[1]);
+            double doubleValue = Double.parseDouble(args[2]);
+
+            System.out.println("Integer argument: " + integerValue);
+            System.out.println("Float argument: " + floatValue);
+            System.out.println("Double argument: " + doubleValue);
+            System.out.println("Sum using decimal values: "
+                    + (integerValue + floatValue + doubleValue));
+
+            // Casting truncates the fractional parts before calculating this sum.
+            int truncatedSum = integerValue + (int) floatValue + (int) doubleValue;
+            System.out.println("Sum after casting to int: " + truncatedSum);
+        } catch (NumberFormatException exception) {
+            System.out.println("The first three arguments must be valid numbers.");
         }
-
     }
-
 }

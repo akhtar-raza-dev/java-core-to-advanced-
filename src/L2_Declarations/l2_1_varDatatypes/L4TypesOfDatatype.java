@@ -13,11 +13,13 @@ public class L4TypesOfDatatype {
         System.out.println("Short: " + varShort);
 
         // int - 4 bytes
-        int varInt = 2147483647;
+        int varInt = 2_147_483_647;
         System.out.println("Int: " + varInt);
+        //? int (32-bit signed):  ~2.14 Billion     (10^9)  -> 2_147_483_647
 
+        //? long (64-bit signed): ~9.22 Quintillion (10^18) -> 9_223_372_036_854_775_807L
         // long - 8 bytes
-        long varLong = 9223372036854775807L;
+        long varLong = 9_223_372_036_854_775_807L;
         System.out.println("Long: " + varLong);
 
         // float - 4 bytes
@@ -106,7 +108,17 @@ public class L4TypesOfDatatype {
         double result =  (f * b) + (i / c) - (d * s);
         System.out.println((f * b) + " + " + (i / c) + " - " + (d * s));
         System.out.println("result = " + result);
-
+        /*
+         * Output:
+         * result = 880.7784146484375
+         *
+         * Calculation Breakdown:
+         * 1. c starts at 64 ('@'), then c++ increments it to 65 ('A').
+         * 2. (f * b) = 5.67f * 42 = 238.14f (float)
+         * 3. (i / c) = 50000 / 65 = 769 (int integer division, truncates decimal)
+         * 4. (d * s) = 0.1234 * 1024 = 126.3616 (double)
+         * 5. result  = 238.1400146484375 + 769 - 126.3616 = 880.7784146484375
+         */
 
     }
 }

@@ -2,7 +2,7 @@ package L2_Declarations.l2_3_Extra;
 
 public class OverUnderFlow {
     public static void main(String[] args) {
-        //! Overflow and Underflow works for only for the datatypes that are namely byte, short, int, long
+        //! Overflow/underflow is relevant to integral types (byte, short, int, long). For float and double, Java uses IEEE 754 rules, so overflow may produce Infinity and underflow may produce 0.0 or subnormal values instead of wrapping.
         int max = Integer.MAX_VALUE;
         int min = Integer.MIN_VALUE;
         System.out.println("Max: " + max);
